@@ -19,15 +19,15 @@ Vite prints the local development URL. All interactions work offline once the do
 
 ## GitHub Pages deployment
 
-Deployment is **blocked and unpublished**. No repository or public URL has been verified.
-The saved GitHub CLI authentication is invalid; run `gh auth login` in your terminal.
-This workspace's `.git` directory is read-only and contains no usable repository.
-Use a workspace with writable Git metadata before initializing or committing.
-The npm registry is unreachable here, so no lockfile could be generated and the
-standard production build and browser verification remain blocked.
+The React/Vite source is stored directly in this project directory; no transfer is needed.
+The host GitHub CLI authenticates successfully as `capybarawombat`. The sandbox
+has isolated credentials and read-only Git metadata, so Git and authenticated
+GitHub operations must run on the writable host.
 
-- Repository URL: pending authenticated repository inspection/creation.
-- Published URL: pending a successful Pages deployment; do not use an assumed URL for a QR code.
+- Repository: https://github.com/capybarawombat/one-glass-of-water
+- Intended Pages URL: https://capybarawombat.github.io/one-glass-of-water/
+- Deployment status: see the latest **Deploy GitHub Pages** Actions run. A URL
+  alone is not evidence that publication has completed.
 
 The intended repository is `one-glass-of-water`. Vite uses
 `base: '/one-glass-of-water/'`. If the actual repository name differs, update
@@ -36,15 +36,14 @@ inspect the hosting configuration and use `/` where appropriate.
 There is no client-side router: navigation uses document fragments.
 Illustrations are inline SVG, fonts are local system fonts, and the favicon is local.
 
-Before the first deployment, on a machine with npm registry access:
+The lockfile is included. Validate on the host with Node.js 24:
 
 ```sh
-npm install --package-lock-only
 npm ci
 npm test
 npm run typecheck
 npm run build
-npx playwright install --with-deps chromium
+npx playwright install chromium
 npm run test:e2e
 ```
 
@@ -57,7 +56,7 @@ Pushes to the default branch build, validate, browser-test and deploy the site;
 manual execution is available in Actions. Other branches skip deployment.
 
 Enable publishing at Repository → Settings → Pages → Build and deployment →
-Source → GitHub Actions. This setting has **not** been configured yet.
+Source → GitHub Actions. The deployment procedure configures this through the GitHub API.
 After the workflow succeeds, obtain the actual URL from Settings → Pages or the
 `github-pages` environment and test that live URL before making a classroom QR code.
 
@@ -96,16 +95,24 @@ npm run test:e2e         # starts the production preview under /one-glass-of-wat
 
 The browser suite covers completion, restart (including during processing), reference presence and link attributes, keyboard input, reduced motion, and document overflow at 320, 360, 375, 390, 430, 768 and 1280 pixels.
 
-### Verification in this implementation environment
+### Verification
 
-- **Passed:** all five Node state-machine and data-integrity tests.
-- **Passed with qualification:** Vite production bundling, using locally cached Vite 6.3.6 and a locally available Preact React-compatibility runtime for this environment only. This is a bundle/syntax check, not validation of the standard React dependency installation. The source and package manifest target React 19; no Preact aliases are committed in the configuration.
-- **Blocked:** standard `npm install` could not resolve registry.npmjs.org under the sandbox's disabled network. Consequently a clean React 19 installation, full `npm run build`, and TypeScript checking could not be verified. The locally available editor runtime lacks React declaration packages, so its attempted typecheck was inconclusive.
-- **Blocked:** Vite and Python HTTP servers could not create listening sockets (`EPERM`). Playwright/Brave launch also failed under socket restrictions. Browser end-to-end tests, screenshots, physical touch testing, measured overflow checks, screen-reader testing and Lighthouse scores remain unverified.
-- **Verified via web tools:** all eight supplied source pages and both supplementary pages were reachable; some redirect to updated canonical locations. Original supplied URLs remain preserved. No supplied `.docx` existed in the repository.
-- The World Bank page identifies the Vietnam indicator and 2024 series, but did not expose the numeric value in its text view. The requested approximately 59% is retained as the presentation's rounded figure, explicitly labeled. A separate World Bank API request was inaccessible through the web tool; it is not used by the app.
+The standard React installation, five integrity tests, TypeScript checks and
+production build passed. The dependency lockfile uses compatible patched versions;
+`npm audit` reported zero vulnerabilities after installation.
 
-Run the clean installation, build, typecheck, and browser suite above before publication. The checked-in source is not dependent on the local QA fallback. No public deployment was made.
+The workflow runs the production browser suite before deploying. It checks the
+complete journey, restart, keyboard input, reduced motion, all eight references,
+and overflow at 320, 360, 375, 390, 430, 768 and 1280 pixels.
+
+To run the same suite against the published site:
+
+```sh
+PLAYWRIGHT_BASE_URL=https://capybarawombat.github.io/one-glass-of-water/ npm run test:e2e
+```
+
+The local browser checks emulate viewport widths; physical device and screen-reader
+testing are separate checks. No Lighthouse score is claimed.
 
 ## Evidence and interpretation
 
