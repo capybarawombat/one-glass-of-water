@@ -1,0 +1,6 @@
+import fs from 'node:fs';
+import { references } from '../src/data/references.ts';
+const escape = value => value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+const list = references.map(r=>`<li>[${r.id}] ${escape(r.author)}${r.year?` (${r.year})`:''}. <a href="${escape(r.url)}" target="_blank" rel="noopener noreferrer">${escape(r.title)}</a>${r.extra?.map(e=>` <a href="${escape(e.url)}" target="_blank" rel="noopener noreferrer">${escape(e.label)}</a>`).join('')??''}</li>`).join('');
+const fallback=`<noscript><main style="max-width:700px;margin:40px auto;padding:20px;font:17px/1.6 Georgia,serif;color:#233f48"><h1>One glass of water.</h1><p>2.1 billion people lacked safely managed drinking water in 2024. [1] Safe water requires source protection, appropriate treatment, reliable delivery and ongoing monitoring.</p><p>Safely managed water is from an improved source, on premises, available when needed, and free from specified contamination. [2]</p><p>Please enable JavaScript for the interactive journey.</p><h2>Sources &amp; Further Reading</h2><ol style="list-style:none;padding:0">${list}</ol></main></noscript>`;
+const file=fs.readFileSync('index.html','utf8');fs.writeFileSync('index.html',file.replace(/<noscript>[\s\S]*?<\/noscript>/,fallback));
