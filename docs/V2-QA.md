@@ -57,5 +57,19 @@ while it loads, if loading fails, and on slow or unsupported devices.
 
 ## Deployment verification
 
-Pending the successful local browser suite, existing GitHub Pages workflow and
-post-publication live-site tests. Do not treat the intended URL as proof of release.
+- Deployed application commit: `60fe1c00e5b6914f7a006e8a027f862ea15350b6`.
+- [GitHub Actions run 39157898376](https://github.com/capybarawombat/one-glass-of-water/actions/runs/39157898376): **success**, build and deploy jobs passed.
+- Public URL: https://capybarawombat.github.io/one-glass-of-water/
+- GitHub Pages API: `build_type=workflow`, HTTPS enforced.
+- Post-publication browser suite: **25 passed**, approximately 1.2 minutes,
+  including the real self-hosted model/CPU execution check.
+- Separate Chromium iPhone 13 **emulation**: actual touch events held the glass
+  to completion; crop tap alternatives, manual bottle continuation, all five
+  litter objects and all five system components completed successfully.
+- Public response: HTTP **200**. No page/asset errors, no horizontal overflow,
+  and **zero** model/recognition requests during the manual touch journey.
+- [Live mobile opening](qa/live-mobile-opening.png)
+- [Live mobile completion](qa/live-mobile-ending.png)
+
+This documentation-only verification record is committed after publication with
+`[skip ci]`; it does not change the application served from the deployed commit.
