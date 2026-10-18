@@ -1,45 +1,20 @@
-# One Glass of Water
+# One Glass of Water · V2
 
-A mobile-first interactive editorial story about safely managed drinking water. Built with React, TypeScript, Vite, custom SVG illustrations, and CSS. No backend, analytics, hosted fonts, video, or runtime API calls. External requests occur only when a reader opens a source.
+An interactive educational documentary built with React, TypeScript, Vite, CSS
+and original SVG artwork. Five connected chapters link an empty glass, food
+production, unequal access, river pollution and the systems behind safe water.
+Gestures are symbolic: the site does not donate, deliver water or identify beneficiaries.
 
-## Run
+Public site: https://capybarawombat.github.io/one-glass-of-water/
+Repository: https://github.com/capybarawombat/one-glass-of-water
 
-Requires Node.js 22.18+ (for native TypeScript test execution) and npm.
+## Develop and validate
 
-```sh
-npm install
-npm run dev
-npm test
-npm run typecheck
-npm run build
-npm run preview
-```
-
-Vite prints the local development URL. All interactions work offline once the document and bundled assets have loaded. This is not an installable offline PWA; opening a new session still requires access to the host.
-
-## GitHub Pages deployment
-
-The React/Vite source is stored directly in this project directory; no transfer is needed.
-The host GitHub CLI authenticates successfully as `capybarawombat`. The sandbox
-has isolated credentials and read-only Git metadata, so Git and authenticated
-GitHub operations must run on the writable host.
-
-- Repository: https://github.com/capybarawombat/one-glass-of-water
-- Intended Pages URL: https://capybarawombat.github.io/one-glass-of-water/
-- Deployment status: see the latest **Deploy GitHub Pages** Actions run. A URL
-  alone is not evidence that publication has completed.
-
-The intended repository is `one-glass-of-water`. Vite uses
-`base: '/one-glass-of-water/'`. If the actual repository name differs, update
-that base and the Playwright preview URL. For a root Pages site or custom domain,
-inspect the hosting configuration and use `/` where appropriate.
-There is no client-side router: navigation uses document fragments.
-Illustrations are inline SVG, fonts are local system fonts, and the favicon is local.
-
-The lockfile is included. Validate on the host with Node.js 24:
+Use Node.js 24 and npm. The lockfile is committed.
 
 ```sh
 npm ci
+npm run dev
 npm test
 npm run typecheck
 npm run build
@@ -47,77 +22,128 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Commit `package-lock.json` with the source and workflow. The workflow intentionally
-uses `npm ci` and requires this lockfile; do not substitute an unpinned install.
-It follows the [official Vite Pages workflow](https://vite.dev/guide/static-deploy#github-pages),
-using pinned official actions, Node.js 24 LTS, separate build and deploy jobs,
-Pages permissions, and serialized deployments. Only `dist` is published.
-Pushes to the default branch build, validate, browser-test and deploy the site;
-manual execution is available in Actions. Other branches skip deployment.
-
-Enable publishing at Repository → Settings → Pages → Build and deployment →
-Source → GitHub Actions. The deployment procedure configures this through the GitHub API.
-After the workflow succeeds, obtain the actual URL from Settings → Pages or the
-`github-pages` environment and test that live URL before making a classroom QR code.
-
-To update the website, edit the source, run the validation commands above,
-commit, and push to the default branch. Watch the Deploy GitHub Pages run in Actions
-or use `gh run watch RUN_ID --exit-status`.
-
-If deployment fails, use `gh run view RUN_ID --log-failed`. For installation errors,
-check that the lockfile is committed and matches `package.json`. For build failures,
-run typecheck and build locally. For Pages permission errors, check the Actions
-source setting and repository Actions permissions. For blank pages or asset 404s,
-check the Vite base against the actual Pages URL and inspect browser network errors.
-Never publish the existing `dist` as proof of a new build: it predates this deployment work.
-
-## Architecture
-
-- `src/App.tsx`: five-scene narrative, scene navigation, restart orchestration.
-- `src/scenes/WaterJourney.tsx`: accessible button interactions, timed visual transitions, progress and announcements. Restart cancels pending transitions.
-- `src/interactions/machine.ts`: explicit `intro → collect → treatment → testing → delivery → complete` reducer. Only the next state or a reset is accepted.
-- `src/components/Illustrations.tsx`: locally rendered SVG glass, landscape, source, treatment, monitoring station, home, and fictional child.
-- `src/components/ReferenceLibrary.tsx`: semantic numbered reference library and in-text citation links.
-- `src/data/references.ts`: single source of truth for all eight supplied references and supplementary links.
-- `src/data/content.ts`: interaction copy.
-- `src/styles/global.css`: responsive layout, typography, animations, visible keyboard focus and reduced-motion overrides.
-
-Buttons provide equivalent touch, mouse and keyboard input without requiring dragging. All narrative scenes and references are reachable without completing the journey. The experience has no scroll locking. Local system serif and sans-serif fonts keep the page independent of font services.
-
-## Tests
-
-```sh
-npm test                 # state transitions, stage gating, resets and reference data
-npx playwright install chromium
-npm run build
-npm run test:e2e         # starts the production preview under /one-glass-of-water/
-```
-
-The browser suite covers completion, restart (including during processing), reference presence and link attributes, keyboard input, reduced motion, and document overflow at 320, 360, 375, 390, 430, 768 and 1280 pixels.
-
-### Verification
-
-The standard React installation, five integrity tests, TypeScript checks and
-production build passed. The dependency lockfile uses compatible patched versions;
-`npm audit` reported zero vulnerabilities after installation.
-
-The workflow runs the production browser suite before deploying. It checks the
-complete journey, restart, keyboard input, reduced motion, all eight references,
-and overflow at 320, 360, 375, 390, 430, 768 and 1280 pixels.
-
-To run the same suite against the published site:
+The production browser suite starts Vite preview under `/one-glass-of-water/`.
+For Ubuntu CI, install browser system dependencies with
+`npx playwright install --with-deps chromium`. Arch Linux browser testing uses
+Playwright's fallback Linux browser build; physical-device testing is separate.
 
 ```sh
 PLAYWRIGHT_BASE_URL=https://capybarawombat.github.io/one-glass-of-water/ npm run test:e2e
+npm audit
 ```
 
-The local browser checks emulate viewport widths; physical device and screen-reader
-testing are separate checks. No Lighthouse score is claimed.
+## Experience and accessibility
 
-## Evidence and interpretation
+1. **The empty glass:** hold a pointer, Space or Enter for five seconds to fill.
+   Release pauses progress. Context is readable without completing the gesture.
+   Completion reveals the 2024 JMP estimate and flows into the field; reduced
+   motion keeps progression manual. Sound is off by default and opt-in only.
+2. **The dry field:** explicitly enable phone tilt, calibrate a comfortable
+   position and adjust sensitivity, or drag the water / use the direction slider.
+   Tap each crop label for an equivalent keyboard-accessible interaction.
+   Vegetation and moisture changes are symbolic, not quantitative agronomy.
+3. **Find a bottle:** camera activation is optional and separate from optional
+   local recognition. Manual continuation offers the same narrative. The revealed
+   community artwork is labeled illustration, not documentary photography.
+4. **Clean the river:** drag litter to the collection area, tap it, or activate
+   its button with the keyboard. Visible cleanup is explicitly distinguished
+   from drinking-water safety; invisible hazards can remain.
+5. **Build the system:** activate five components in sequence. Drinking-water
+   and wastewater pathways have different labels, colors and objectives, with
+   no direct potable reuse connection. Every component explanation and Vietnam
+   example is readable without completing the sequence.
 
-WHO/UNICEF's 2025 report supports the global 2024 figures (2.1 billion; 60% rural and 83% urban). The national Vietnam service estimate and the rural program's improved-water-resource outcome are explicitly different indicators. The UNICEF drought example and World Bank program result retain their population, dates, and original citation numbers.
+Back, Skip, Replay and Restart controls remain available. All chapters and
+references are readable without granting camera or motion permission. Reduced
+motion removes decorative animation and provides direct field controls.
+System fonts and inline vector art support slow connections. No WebGL is needed
+for the story; local recognition can fall back to TensorFlow's CPU backend.
 
-This is a conceptual simulation. Water appearance is not proof of safety. A positive simulated verification represents appropriate treatment, standards and continuing monitoring, not a universal guarantee from one test or a home filtration procedure. No scientific measurements are fabricated.
+## Architecture
 
-The story is designed for a quick scan and short interaction; reading every reference takes longer than the presentation's one-minute target.
+- `src/App.tsx`: chapter navigation, observation, focus, replay/restart, transitions.
+- `src/interactions/machine.ts`: V2 narrative reducer alongside the preserved V1
+  service-state reducer. Narrative, gestures and permission states are separate.
+- `src/experience/Chapters.tsx`: five connected scenes and accessible alternatives.
+- `src/experience/Artwork.tsx`: original glass, landscape, community, river and water.
+- `src/hooks/useHold.ts`: pausable hold timing and cancellation.
+- `src/hooks/useTilt.ts`: permission, calibration, smoothing, sensitivity and cleanup.
+- `src/media/useCamera.ts`: explicit capture, generation guards, inference lifecycle.
+- `src/media/bottleDetector.ts`: lazy TensorFlow/COCO-SSD load with CPU fallback.
+- `src/media/detectionPolicy.ts`: confidence, size and three-frame stability policy.
+- `src/data/system.ts`: infrastructure explanations and responsible actors.
+- `src/data/references.ts`: original eight citations preserved, three primary
+  references added for policy, wastewater financing and sustainable agriculture.
+- `src/components/ReferenceLibrary.tsx`: citations, bibliography and asset credits.
+
+V1 scene, illustration and copy modules are retained as source history, not loaded
+into V2. `src/styles/v1.css` archives the previous stylesheet. No new framework,
+3D library, tracking, analytics, external font or cloud recognition is used.
+
+## Camera, motion and licenses
+
+No camera request occurs on page load. `getUserMedia` runs only after Enable
+camera. It requests rear-facing video and no microphone. No still photographs
+are captured or stored. Frames are transient in-memory recognition inputs; they
+are never uploaded. No photograph capture feature is included.
+
+Recognition is a second opt-in. Approximately 19 MB of self-hosted model data
+and a separate ~233 KB gzipped JavaScript chunk load only on request. COCO-SSD
+Lite MobileNet V2 is a general object detector: it can miss or misclassify a
+container and cannot determine its contents or water safety. It requires three
+spatially stable bottle predictions at >=0.65 confidence, at most one inference
+every 650 ms after the previous inference ends, on a 320×240 input. Manual
+continuation remains available while loading and on slow devices.
+
+Streams, timers and orientation listeners stop on navigation, replay, restart
+and tab hiding. Late permission/model responses are discarded and cleaned up;
+an in-flight inference disposes its model when it settles. No permission is
+requested automatically when returning to a chapter.
+
+Original illustrations depict no real people or documented locations. No source
+photographs were copied without established reuse rights. Credits, provenance
+and upstream licenses are in `public/ASSET-LICENSES.md` and the model's Apache-2.0
+license is bundled in `public/models/bottle/LICENSE`.
+
+## Research integrity
+
+The 2.1 billion estimate describes people lacking **safely managed** drinking water
+in **2024**, from the WHO/UNICEF JMP **2025** report. Safely managed means water from
+an improved source, on premises, available when needed and free from specified
+contamination. Rural 60% and urban 83% are global 2024 coverage shares.
+
+Vietnam's national rural water/sanitation strategy is a **2021 policy** with a
+2030 horizon and 2045 vision. The Bình Dương project figures refer to **2024
+approval/financing**, with approximately 550,000 direct beneficiaries by 2032 a
+**projection**, not an achieved outcome. UNICEF's 2024 Mekong Delta account
+reports affected households/children and a **response plan** for 17,000 households;
+it is not represented as completed delivery. The original 2013–2018 rural program
+result remains historical and uses an improved-water-resource indicator distinct
+from national safely managed coverage. The original rounded ~59% Vietnam
+presentation figure remains qualified in the expandable historical context.
+
+Water appearance is not proof of safety. This is not a home treatment recipe,
+water-quality test, irrigation prescription or scientific crop-growth model.
+
+## Deployment
+
+Vite's base remains `/one-glass-of-water/`. The existing pinned GitHub Pages
+workflow installs locked dependencies with Node 24, runs unit tests, TypeScript,
+a production build and browser tests, then uploads `dist` and deploys. Only the
+default branch deploys; the remote history is preserved.
+
+```sh
+git add src tests public package.json package-lock.json index.html README.md docs
+git commit -m "Create the five-chapter One Glass of Water experience"
+git push origin main
+gh run list --workflow deploy.yml
+gh run watch RUN_ID --exit-status
+```
+
+Use the writable host for Git and authenticated GitHub operations. Sandbox
+credentials and read-only Git mounts may differ from the host. Do not reauthenticate
+merely because a sandbox credential check fails.
+
+Audit/implementation plan: `docs/V2-PLAN.md`. QA evidence and limits are recorded
+in `docs/V2-QA.md`. Never infer deployment success merely from the intended URL;
+verify the completed Actions run and the live site.
