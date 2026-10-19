@@ -1,0 +1,572 @@
+{
+  "community": {
+    "acquired": "2026-10-19T12:48:51.179Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/2/26/Oxfam_East_Africa_-_Children_carry_a_jerry_can_of_water_in_Wajir.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "143099c13dc5917b5ba4530c84ecd7a3ba27889cbd50c78301cc50c6a89da359",
+    "sha256": "2a625fc0dbf0354950cc9b3a0766278d352d296642f097100341b45b137ca2d3",
+    "bytes": 150380,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2011-12-09 09:43:27",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Oxfam East Africa - Children carry a jerry can of water in Wajir",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "2011 Horn of Africa famine|Taken with Canon EOS 1000D|Wajir County|Displaced persons in Kenya|Flickr images uploaded by Flickr upload bot|Images from Oxfam East Africa|Jerrycans in Africa",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Children carry jerry cans of water in Wajir. For most families it can take more than six hours to collect water for the family each day.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2011-07-08 11:19:39",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/Flickr\" class=\"mw-redirect\" title=\"Flickr\">Flickr</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/46434833@N05/5932440207\">Children carry a jerry can of water in Wajir</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/46434833@N05\">Oxfam East Africa</a>",
+        "source": "commons-desc-page"
+      },
+      "Permission": {
+        "value": "<table id=\"FlickrReview\" style=\"width:100%; margin:0.3em auto; text-align:start; background-color:var(--background-color-success-subtle,#d5fdf4); padding: 3px; border:1px solid var(--border-color-base,#a2a9b1); color:inherit;\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><a href=\"https://en.wikipedia.org/wiki/Flickr\" class=\"extiw\" title=\"en:Flickr\">Flickr</a></b>, was uploaded to Commons using <b><a href=\"//commons.wikimedia.org/wiki/User:Flickr_upload_bot\" title=\"User:Flickr upload bot\">Flickr upload bot</a></b> on 9 December 2011, 09:42 by <span id=\"flickr_upload_bot_reviewer\"><b><a href=\"//commons.wikimedia.org/wiki/User:Tm\" title=\"User:Tm\">Tm</a></b></span>. On that date, it was confirmed to be licensed under the terms of the license indicated.\n</td>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/60px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/120px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td></tr></tbody></table>\n<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/2.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/2.0/deed.en\">Attribution 2.0 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/2.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 2.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 2.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "Resized, WebP conversion; responsive crop and separate text overlay. No water composited onto people."
+  },
+  "dry": {
+    "acquired": "2026-10-19T12:48:57.119Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Corn_shows_the_effect_of_drought.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "14b5f9ff6438d3fc2d79fddb46875c17e4c99809c19db99d02407fcf9ced947c",
+    "sha256": "6278b7de7e17f0bb8dae85e8c4cbb40d669ca97d703270dc9dae45a7378707b7",
+    "bytes": 431810,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2026-06-16 10:07:20",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Corn shows the effect of drought",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "2013 in Texas|PD USDA|Images with extracted images|Cornfields in the United States|Drought in Texas",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Corn shows the affect of drought in Texas on Aug. 20, 2013. USDA photo by Bob Nichols.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2013-08-20",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.usda.gov/media/blog/2014/02/11/southern-plains-climate-hub-seeks-address-three-huge-problems\">https://www.usda.gov/media/blog/2014/02/11/southern-plains-climate-hub-seeks-address-three-huge-problems</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "USDA photo by Bob Nichols",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "Public domain",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Public domain",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Copyrighted": {
+        "value": "False",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "pd",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "Resized and WebP conversion; symbolic crossfade to an unrelated field, never a before-and-after claim."
+  },
+  "crops": {
+    "acquired": "2026-10-19T12:49:03.014Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Irrigation_and_Water_%2820150415-NRCS-LSC-0781%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "5d657112abeef69b2c7ece43ba3028704db566b4d8e00c5d49c7e6891940646d",
+    "sha256": "8e026cb018ac79eca302d4a6e5095e3b2bd33c6297794756e7aebb7c676971b0",
+    "bytes": 201644,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2026-03-01 21:26:16",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Irrigation and Water (20150415-NRCS-LSC-0781)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Woodland, California|Fields in California|PD USDA|Flickr images missing SDC creator|United States photographs taken on 2015-04-15|Flickr images reviewed by FlickreviewR 2|Files from U.S. Department of Agriculture Flickr stream|U.S. Department of Agriculture Flickr files uploaded by OptimusPrimeBot|Flickr images missing SDC published in",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Tomato plants thrive from water filtered through a sand media filtration tank system and along underground drip irrigation tubes 10 inches below the surface providing water to the plants, in Woodland, CA on Wednesday, Apr. 15, 2015. USDA photo by Lance Cheung.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "Taken on 15 April 2015, 21:51:58",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/usdagov/19591925143\">20150415-NRCS-LSC-0781</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/usdagov/\">USDAgov</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "Public domain",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Public domain",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Copyrighted": {
+        "value": "False",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "pd",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "Resized and WebP conversion; symbolic dissolve from an unrelated location."
+  },
+  "river": {
+    "acquired": "2026-10-19T12:49:07.830Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Plastic_bottles_polluting_the_river_%2851172162326%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "f3222f66a575980aa5c5b724c50325c475bf0b0dfc70c1e16ff2dcec2e96fad8",
+    "sha256": "193c9e9da67ce59a539b21177f53e9df6e6cbb9d9271f3a93f000305abbaade1",
+    "bytes": 292524,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2021-05-11 17:13:05",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Plastic bottles polluting the river (51172162326)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Flickr images reviewed by FlickreviewR 2|River pollution",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Plastic bottles polluting the river",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2021-04-19 16:24",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/26344495@N05/51172162326/\">Plastic bottles polluting the river</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/26344495@N05\">Ivan Radic</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "Resized, WebP conversion, responsive crop. Additional removable photographic overlays are symbolic."
+  },
+  "bottle": {
+    "acquired": "2026-10-19T12:49:12.366Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Close-up_of_a_clear_plastic_bottle_floating_in_the_shallow_end_of_a_river_%2851145066735%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "0632f130018babc6ab473e81aade475f7683f92222a2acdfeeecea2e3c620bc5",
+    "sha256": "0658cc0221c0f7b489f837ff45a3ff44b17596cf626bb1ef8e4fecf603987a51",
+    "bytes": 157866,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2021-05-11 17:27:06",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Close-up of a clear plastic bottle floating in the shallow end of a river (51145066735)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Plastic pollution|Flickr images reviewed by FlickreviewR 2",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Close-up of a clear plastic bottle floating in the shallow end of a river",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2021-04-19 16:12",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/26344495@N05/51145066735/\">Close-up of a clear plastic bottle floating in the shallow end of a river</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/26344495@N05\">Ivan Radic</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "Resized, WebP conversion, feathered photographic crop and rotation; repeated symbolic overlays."
+  },
+  "treatment": {
+    "acquired": "2026-10-19T12:49:15.509Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/8/89/Secondary_sedimentation_tanks_-_Blue_Plains_WWTP_-_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "0470d5f275410c158f90af1367870dca6044047762069bb7594ff9b8238f16e3",
+    "sha256": "0eedd89ba3cf34ba3d6de93f04091874d0c68031d2d6860cc3401509bb532316",
+    "bytes": 202356,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2020-06-02 16:03:45",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Secondary sedimentation tanks - Blue Plains WWTP - 2016",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "2016 in Washington, D.C.|Blue Plains Advanced Wastewater Treatment Plant|Activated sludge|Self-published work|PD-self|Wastewater secondary settling tanks",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "View of secondary sedimentation tanks (activated sludge process) at the <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Blue%20Plains%20Advanced%20Wastewater%20Treatment%20Plant\" title=\"w:Blue Plains Advanced Wastewater Treatment Plant\" class=\"extiw\">Blue Plains Advanced Wastewater Treatment Plant</a>, Washington, D.C.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2016-06-16",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Moreau1?action=edit&amp;redlink=1\" title=\"User:Moreau1 (page does not exist)\" class=\"new\" typeof=\"mw:LocalizedAttrs\" data-mw-i18n='{\"title\":{\"lang\":\"x-page\",\"key\":\"red-link-title\",\"params\":[\"User:Moreau1\"]}}'>Moreau1</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "Public domain",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Public domain",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Copyrighted": {
+        "value": "False",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "pd",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "Resized, WebP conversion and responsive crop."
+  },
+  "irrigationVideo": {
+    "acquired": "2026-10-19T12:49:28.618Z",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/d/d3/20200728-NRCS-LSC-9001-Pivot_Irrigation.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha256": "9ce9cc899addd97703b4ad7d0cfda113b4f2195f2d6cebb74b32bb89155bddce",
+    "sha256": "75b86067f0111361e3c4f11e50610e38733be8dca07274917d241d8dab7c009e",
+    "bytes": 1305458,
+    "originalMetadata": {
+      "DateTime": {
+        "value": "2026-03-19 13:53:16",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "20200728-NRCS-LSC-9001-Pivot Irrigation",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Bexar County, Texas|PD USDA|Flickr images missing SDC creator|Uploaded with video2commons|Video display resolution 1920 x 1080|Videos of 2020 from the United States|Flickr videos review needed|Videos taken on 2020-08-06|Wheat fields in Texas|Files from U.S. Department of Agriculture Flickr stream|U.S. Department of Agriculture Flickr files uploaded by OptimusPrimeBot",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "The U.S. Department of Agriculture (USDA) Farm Production and Conservation (FPAC) Natural Resources Conservation Service (NRCS) helped Howard and Barbara Schirmer, and their son Ernie with wife Terri developed a conservation plan that would help reduce water usage; to do that the farm qualified for the Environmental Quality Incentives Program (EQIP) that provided financial assistance in the form of cost-sharing grants that helped Schirmer Farms install a subsurface drip irrigation (SDI) and center pivot irrigation systems, at their fields, near San Antonio, in Macdona, TX, on July 28, 2020. Please see the album description for more information about this six-generation farming family, these organizations, programs and conservation practices at <a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/short_urls.gne?photoset=aHsmPRAeea\">https://www.flickr.com/short_urls.gne?photoset=aHsmPRAeea</a>\n<p><br>\n</p>\nUSDA Media by Lance Cheung.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "Taken on 6 August 2020, 08:15:48",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/usdagov/50195929287\">20200728-NRCS-LSC-9001-Pivot Irrigation</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/usdagov/\">USDAgov</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "Public domain",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Public domain",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Copyrighted": {
+        "value": "False",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "pd",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "modifications": "12-second silent excerpt, resized to 960 px, H.264 transcoding. Original speed preserved."
+  }
+}

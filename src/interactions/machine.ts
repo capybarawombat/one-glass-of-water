@@ -7,7 +7,7 @@ export function journeyReducer(state:JourneyState,event:JourneyEvent):JourneySta
 }
 
 // Narrative navigation is independent of the original water-service reducer.
-export const chapters = ['glass', 'field', 'bottle', 'river', 'system'] as const;
+export const chapters = ['glass', 'people', 'field', 'river', 'system'] as const;
 export type Chapter = typeof chapters[number];
 export type StoryEvent = { type: 'GO'; chapter: Chapter } | { type: 'NEXT' } | { type: 'BACK' } | { type: 'RESET' };
 export function storyReducer(state: Chapter, event: StoryEvent): Chapter {

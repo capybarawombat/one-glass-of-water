@@ -1,6 +1,6 @@
 {
   "name": "one-glass-of-water",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,14 +9,11 @@
     "typecheck": "tsc --noEmit",
     "test": "node tests/integrity.test.ts",
     "preview": "vite preview --host 0.0.0.0",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "assets:fetch": "node scripts/acquire-media.mjs",
+    "assets:verify": "node scripts/verify-media.mjs"
   },
   "dependencies": {
-    "@tensorflow-models/coco-ssd": "^2.2.3",
-    "@tensorflow/tfjs-backend-cpu": "^4.22.0",
-    "@tensorflow/tfjs-backend-webgl": "^4.22.0",
-    "@tensorflow/tfjs-converter": "^4.22.0",
-    "@tensorflow/tfjs-core": "^4.22.0",
     "lucide-react": "^0.468.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

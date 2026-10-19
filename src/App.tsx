@@ -1,53 +1,79 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Droplet, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { ReferenceLibrary } from './components/ReferenceLibrary';
 import { chapters, storyReducer, type Chapter } from './interactions/machine';
 import { useReducedMotion } from './hooks/useReducedMotion';
-import { BuildSystem, CleanRiver, DryField, EmptyGlass, FindBottle } from './experience/Chapters';
-const names = ['The empty glass','The dry field','Find a bottle','Clean the river','Build the system'];
+import { FieldScene, PeopleScene, PourScene, RiverScene, SystemScene } from './cinema/Scenes';
+import { useAmbience } from './cinema/useAmbience';
+const names = ['A glass away', 'Not for everyone', 'A living landscape', 'Beneath the surface', 'The people behind it'];
 export default function App() {
- const [chapter,dispatch] = useReducer(storyReducer, 'glass');
- const [visible,setVisible] = useState<string>('glass');
- const [audio,setAudio] = useState(false), [replays,setReplays] = useState([0,0,0,0,0]);
- const [bridge,setBridge] = useState(false);
- const transition = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
- const reduced = useReducedMotion(); const current = chapters.indexOf(chapter);
- const go = useCallback((target: Chapter, focus = true) => {
-  dispatch({type:'GO',chapter:target}); setVisible(target);
-  history.replaceState(null,'',`#${target}`);
-  clearTimeout(transition.current); setBridge(true); transition.current = setTimeout(()=>setBridge(false),reduced?0:900);
-  document.getElementById(target)?.scrollIntoView({behavior:'instant',block:'start'});
-  if (focus) document.getElementById(`${target}-title`)?.focus({preventScroll:true});
- }, [reduced]);
- useEffect(()=>{
-  // Read current geometry, rather than queued IntersectionObserver entries from
-  // before a rapid navigation or browser scroll-to-focus operation.
-  const sections = Array.from(document.querySelectorAll<HTMLElement>('main > section[id]'));
-  let frame = 0;
-  const update = () => {
-   const point = innerHeight * .35;
-   const section = sections.find(node => { const rect=node.getBoundingClientRect();return rect.top<=point && rect.bottom>point; });
-   if (!section) return;
-   setVisible(section.id);
-   if(chapters.includes(section.id as Chapter))dispatch({type:'GO',chapter:section.id as Chapter});
-  };
-  const onScroll = () => { cancelAnimationFrame(frame);frame=requestAnimationFrame(update); };
-  const observer = new IntersectionObserver(update,{rootMargin:'-15% 0px -55% 0px'});
-  sections.forEach(section=>observer.observe(section));
-  window.addEventListener('scroll',onScroll,{passive:true});
-  const hash = location.hash.slice(1); if(chapters.includes(hash as Chapter)) { dispatch({type:'GO',chapter:hash as Chapter}); setVisible(hash); requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView({behavior:'instant'})); }
-  return ()=>{observer.disconnect();window.removeEventListener('scroll',onScroll);cancelAnimationFrame(frame);clearTimeout(transition.current)};
- }, []);
- function restart(){setAudio(false);setReplays(old=>old.map(n=>n+1));go('glass')}
- function replay(){setReplays(old=>old.map((n,i)=>i===current?n+1:n));go(chapter)}
- return <><a className="skip-link" href="#references">Skip to all evidence and references</a><header className="site-header"><a className="brand" href="#glass" onClick={e=>{e.preventDefault();go('glass')}}><Droplet size={20} strokeWidth={1.2}/><span>ONE GLASS<br/><span className="brand-sub">OF WATER</span></span></a><span className="header-caption">A STORY OF CONNECTION</span><div className="header-actions"><button className="audio-button" aria-label={audio?'Turn sound off':'Enable gentle sound'} aria-pressed={audio} onClick={()=>setAudio(n=>!n)}>{audio?<Volume2 size={17}/>:<VolumeX size={17}/>}<span>Sound {audio?'on':'off'}</span></button><a href="#references">The evidence ↗</a></div></header>
- <nav className="chapter-nav" aria-label="Story chapters">{chapters.map((id,i)=><button key={id} onClick={()=>go(id)} aria-current={visible===id?'step':undefined} aria-label={`Chapter ${i+1}: ${names[i]}`}><span>0{i+1}</span><span className="chapter-name">{names[i]}</span></button>)}</nav>
- <main id="top"><section id="glass" className={`chapter chapter-glass ${visible==='glass'?'is-active':''}`} aria-labelledby="glass-title"><EmptyGlass key={replays[0]} active={visible==='glass'} next={()=>go('field')} reduced={reduced} audio={audio}/></section>
- <section id="field" className={`chapter chapter-field ${visible==='field'?'is-active':''}`} aria-labelledby="field-title"><DryField key={replays[1]} active={visible==='field'} next={()=>go('bottle')} reduced={reduced}/></section>
- <section id="bottle" className={`chapter chapter-bottle ${visible==='bottle'?'is-active':''}`} aria-labelledby="bottle-title"><FindBottle key={replays[2]} active={visible==='bottle'} next={()=>go('river')} reduced={reduced}/></section>
- <section id="river" className={`chapter chapter-river ${visible==='river'?'is-active':''}`} aria-labelledby="river-title"><CleanRiver key={replays[3]} active={visible==='river'} next={()=>go('system')} reduced={reduced}/></section>
- <section id="system" className={`chapter chapter-system ${visible==='system'?'is-active':''}`} aria-labelledby="system-title"><BuildSystem key={replays[4]} restart={restart}/></section><ReferenceLibrary/></main>
- <div className={`transition-water ${bridge?'flowing':''}`} aria-hidden="true"/>
- <nav className="journey-controls" aria-label="Journey controls"><button aria-label="Previous chapter" disabled={current===0} onClick={()=>go(chapters[current-1])}><ArrowLeft size={16}/><span>Back</span></button><span className="current-chapter">0{current+1} <span>/ 05</span></span><button onClick={replay} aria-label="Replay current chapter"><RotateCcw size={15}/><span>Replay</span></button><button onClick={restart} aria-label="Restart all chapters"><span>Restart</span></button><button onClick={()=>current<4?go(chapters[current+1]):document.getElementById('references')?.scrollIntoView()} aria-label={current<4?'Skip to next chapter':'Skip to references'}><span>{current<4?'Skip':'Sources'}</span><ArrowRight size={16}/></button></nav>
- </>;
+    const [chapter, dispatch] = useReducer(storyReducer, 'glass');
+    const [replay, setReplay] = useState(0), [audio, setAudio] = useState(false);
+    const [transition, setTransition] = useState(false), [inEvidence, setInEvidence] = useState(false);
+    const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+    const transitionEnd = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+    const reduced = useReducedMotion();
+    const index = chapters.indexOf(chapter);
+    useAmbience(audio, !inEvidence);
+    const navigate = useCallback((target: Chapter, focus = true) => {
+        dispatch({ type: 'GO', chapter: target });
+        setInEvidence(false);
+        history.replaceState(null, '', `#${target}`);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (focus)
+            requestAnimationFrame(() => document.getElementById(`${target}-title`)?.focus({ preventScroll: true }));
+    }, []);
+    const go = useCallback((target: Chapter) => {
+        clearTimeout(timer.current);
+        clearTimeout(transitionEnd.current);
+        setTransition(false);
+        navigate(target);
+    }, [navigate]);
+    function pourTransition() {
+        if (reduced) {
+            go('people');
+            return;
+        }
+        setTransition(true);
+        timer.current = setTimeout(() => navigate('people'), 550);
+        transitionEnd.current = setTimeout(() => setTransition(false), 1100);
+    }
+    function restart() { setReplay(n => n + 1); setAudio(false); go('glass'); }
+    function replayChapter() { setReplay(n => n + 1); go(chapter); }
+    useEffect(() => {
+        const hash = location.hash.slice(1);
+        if (chapters.includes(hash as Chapter))
+            navigate(hash as Chapter, false);
+        const references = document.getElementById('references');
+        const observer = new IntersectionObserver(entries => {
+            const entry = entries[0];
+            setInEvidence(entry.isIntersecting && entry.boundingClientRect.top < innerHeight * .55);
+        }, { threshold: [0, .1, .25], rootMargin: '-20% 0px 0px' });
+        if (references)
+            observer.observe(references);
+        const onHash = () => { const target = location.hash.slice(1); if (chapters.includes(target as Chapter))
+            navigate(target as Chapter); };
+        window.addEventListener('hashchange', onHash);
+        return () => { observer.disconnect(); clearTimeout(timer.current); clearTimeout(transitionEnd.current); window.removeEventListener('hashchange', onHash); };
+    }, [navigate]);
+    const sceneProps = { active: !inEvidence, reduced, next: () => go(chapters[Math.min(index + 1, 4)]) };
+    return <>
+    <a className="skip-link" href="#references">Skip the film and explore the sources</a>
+    <header className={`film-header ${inEvidence ? 'on-evidence' : ''}`}>
+      <a className="wordmark" href="#glass" onClick={event => { event.preventDefault(); go('glass'); }}>ONE GLASS<span>OF WATER</span></a>
+      <span className="film-header-caption">A STORY OF OUR MOST ESSENTIAL CONNECTION</span>
+      <div className="header-actions"><button onClick={() => setAudio(value => !value)} aria-pressed={audio} title="Optional synthesized water-like sound design">Sound {audio ? 'on' : 'off'}<span className={`sound-lines ${audio ? 'playing' : ''}`} aria-hidden="true"><i /><i /><i /></span></button><a href="#references">Sources ↗</a></div>
+    </header>
+    <main id="top"><div id="film" className="film" aria-label="One Glass of Water, an interactive short film">
+      <section className={`film-scene scene-${chapter}`} id={chapter} key={`${chapter}-${replay}`} aria-labelledby={`${chapter}-title`}>
+        {chapter === 'glass' && <PourScene {...sceneProps} next={pourTransition}/>}
+        {chapter === 'people' && <PeopleScene {...sceneProps}/>}
+        {chapter === 'field' && <FieldScene {...sceneProps}/>}
+        {chapter === 'river' && <RiverScene {...sceneProps}/>}
+        {chapter === 'system' && <SystemScene {...sceneProps} next={restart}/>}
+      </section>
+      <div className={`water-wipe ${transition ? 'is-flowing' : ''}`} aria-hidden="true"><span /><span /><span /></div>
+    </div><ReferenceLibrary /></main>
+    {!inEvidence && <><nav className="film-chapters" aria-label="Film chapters">{chapters.map((id, i) => <button key={id} aria-label={`Chapter ${i + 1}: ${names[i]}`} aria-current={chapter === id ? 'step' : undefined} onClick={() => go(id)}><span /><small>0{i + 1}</small></button>)}</nav>
+      <nav className="film-controls" aria-label="Experience controls"><div><button disabled={index === 0} onClick={() => go(chapters[index - 1])} aria-label="Previous chapter">← Back</button><button onClick={replayChapter} aria-label="Replay current chapter">Replay ↺</button></div><span className="film-position">0{index + 1}<span> / 05</span></span><button onClick={() => index < 4 ? go(chapters[index + 1]) : document.getElementById('references')?.scrollIntoView()} aria-label={index < 4 ? 'Skip to next chapter' : 'Skip to references'}>{index < 4 ? 'Skip chapter' : 'Sources'} →</button></nav></>}
+  </>;
 }
