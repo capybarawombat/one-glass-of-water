@@ -1,5 +1,32 @@
 # V3 QA and release status
 
+## Final-QA follow-up (latest)
+
+- Existing V3 commit: `585467a6130a4358348f2dd26b35beb4bff3310a`; working tree
+  was initially clean. Local `main` and cached `origin/main` point to this commit.
+  This is not a fresh verification of the remote.
+- All six required photographs and optional video are now present. Their SHA-256
+  acquisition records and size limits pass `npm run assets:verify`. Recorded source
+  metadata identifies the three Oxfam/Ivan Radic images as CC BY 2.0; the USDA and
+  Moreau1 media as public domain. All six photographs were visually inspected.
+- ffprobe confirms the video is H.264, 960×540, 12 seconds, 1,305,458 bytes.
+- `npm run typecheck`, all 12 `npm test` checks, and `npm run build` pass.
+- `npm run test:e2e` was attempted once and failed before test execution because
+  its preview server could not start in the sandbox. Rendered-site inspection,
+  glass realism and scene-transition assessment therefore remain unverified.
+- The network-isolation browser test now derives its allowed origin from the
+  configured base URL, so GitHub Pages itself is not falsely flagged as external.
+  The photograph test polls for decoding instead of racing the network. These
+  test fixes have not been executed in a browser here.
+- Network/DNS remains blocked in this session; the host authentication reported
+  by the user cannot be verified from the sandbox. `.git` is mounted read-only.
+  No new commit, push, Actions monitoring or live verification was performed.
+- Follow `V3-HOST-RELEASE.md` on the Arch host to finish and report the new commit,
+  Actions run, visual inspection and live tests. The older record below is
+  historical and its missing-media observations are superseded.
+
+## Original implementation-session record
+
 2026-10-19. Existing repository: `capybarawombat/one-glass-of-water`; branch `main`.
 
 ## Executed

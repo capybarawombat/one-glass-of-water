@@ -75,8 +75,9 @@ test('ending returns to the glass and replay starts a fresh volume',async({page}
 for(const width of [320,360,390,430,768,1280])test(`chapters fit ${width}px without horizontal overflow`,async({page})=>{
  await page.setViewportSize({width,height:844});for(const id of chapters){await open(page,id);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)}
 });
-test('the film makes no external requests and starts muted',async({page})=>{
- const requests:string[]=[];page.on('request',request=>{const url=new URL(request.url());if(!['127.0.0.1','localhost'].includes(url.hostname))requests.push(url.href)});
+test('the film makes no external requests and starts muted',async({page,baseURL})=>{
+ const allowedOrigin=new URL(baseURL!).origin;
+ const requests:string[]=[];page.on('request',request=>{const url=new URL(request.url());if(['http:','https:'].includes(url.protocol)&&url.origin!==allowedOrigin)requests.push(url.href)});
  await open(page);await expect(page.getByRole('button',{name:'Sound off'})).toHaveAttribute('aria-pressed','false');
  for(const id of chapters.slice(1))await open(page,id);
  expect(requests).toEqual([]);
@@ -84,6 +85,6 @@ test('the film makes no external requests and starts muted',async({page})=>{
 test('production documentary photographs decode successfully',async({page})=>{
  for(const id of ['people','field','river','system']){
   await open(page,id);await expect(page.locator('.scene-backdrop').first().locator('img')).toBeVisible();
-  expect(await page.locator('.scene-backdrop').first().locator('img').evaluate((image:HTMLImageElement)=>image.complete&&image.naturalWidth>=1000)).toBe(true);
+  await expect.poll(async()=>page.locator('.scene-backdrop').first().locator('img').evaluate((image:HTMLImageElement)=>image.complete&&image.naturalWidth>=1000)).toBe(true);
  }
 });
